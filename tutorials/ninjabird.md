@@ -24,9 +24,9 @@ game.onUpdateInterval(1000, function () {
 })
 
 function flap (bird: Sprite) {
-  bird.vy = 50
-  pause(200)
   bird.vy = -50
+  pause(200)
+  bird.vy = 50
 }
 
 function createTrees() {
@@ -144,9 +144,9 @@ We call our function with the `|| function: call flap [mySprite] ||` block.
 ```blocks
 //@collapsed
 function flap (bird: Sprite) {
-  bird.vy = 50
-  pause(200)
   bird.vy = -50
+  pause(200)
+  bird.vy = 50
 }
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -170,7 +170,7 @@ Let's do this in the next step!
 We need to add an if-then statement and place the flap code call inside there. This will make sure the bird only flaps if it won't go off the screen.
 
 - :smile: **Add If-then**: add an `|| logic: if <true> then ||` block within the controller.A.onEvent event.
-- :weight: **Check >= Condition**: We need to replace the condition which right now says true with the following logic. We need a `|| logic: O < 0 ||` block. We want to change this to **<=**.
+- :weight: **Check >= Condition**: We need to replace the condition which right now says true with the following logic. We need a `|| logic: O > 0 ||` block. We want to change this to **>=**.
 - :marker: **Use the Bird's Y Position**: in the left circle we want to add a `|| sprites: mySprite x ||` block. Change your x to y and choose the bird as the sprite. In the right circle you want to put the number 10.
 - :move: **Compare to the number 10**: Lastly we want to make sure that the flap function call is placed inside of the if-then statement. This will run the flap function only when the bird's y position is greater than or equal to 10.
 
@@ -182,9 +182,9 @@ We need to add an if-then statement and place the flap code call inside there. T
 ```blocks
 //@collapsed
 function flap (bird: Sprite) {
-  bird.vy = 50
-  pause(200)
   bird.vy = -50
+  pause(200)
+  bird.vy = 50
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
   let bird: Sprite = null
