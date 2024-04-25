@@ -53,7 +53,7 @@ Ok, Are you ready to get started?
 
 hint~
 
-- :paint brush: **Add Background Color**: Set a background color by clicking on circle `|| scene: set background color ||` block that is currently inside the `||loops: on start ||` block.
+- :paint brush: **Add Background Color**: Set a background color by clicking on circle `|| scene: set background color ||` block that is currently inside the `|| loops: on start ||` block.
 - :setting: **Add Background Effects**: Let's add an effect to our background by adding a `|| scene: start screen effect ||` block.
 - :heart: **Reset our Lives**: We want each player to start the game with the same amount of lives. We can set this with the `|| info: set life to  ||` block.
 - :trophy: **Reset our Score**: We want each player to start the game with a score of 0. We can set this with the `|| info: set score to ||` block
@@ -67,8 +67,8 @@ info.setScore(0)
 
 ## Create Our Bird Sprite
 
-- :plus: **Create Bird Sprite**: Create the bird sprite by adding a `|| variables(sprites):set mySprite to ||` block. Make sure to create a _New Variable_ for the **Name**, set the **Image** for the bird, and set _Player_ for the **Name**.
-- :marker: **Set Bird Position**: Set a starting **Position** for the bird with `|| spirites: set mySprite position to ||`
+- :plus: **Create Bird Sprite**: Create the bird sprite by adding a `|| variables(sprites):set mySprite to ||` block. Make sure to create a _New Variable_ for the **Name**, set the **Image** for the bird, and set _Player_ for the **Kind**.
+- :marker: **Set Bird Position**: Set a starting **Position** for the bird with `|| sprites: set mySprite position to ||` We want to use the numbers **25** & **50**
 
 ```blocks
 scene.setBackgroundColor(9)
@@ -139,7 +139,7 @@ We want our bird to move when we press the **A** button. For this there is a fun
 
 hint~
 
-We call our function with the `|| function: call flap [mySprite] ||` block.
+We our flap function is already defined, but we just have to tell the computer to execute the function. This is what we call **calling** the function. To call our function we need to use the `|| function: call flap [mySprite] ||` block.
 
 ```blocks
 //@collapsed
@@ -265,7 +265,7 @@ Let's code this out next!
 ## Changing Our Life Count
 
 - :hazard: **Collide With Tree Logic**: inside of your `|| sprites: on overlap ||` event block add a `|| sprites: destroy mySprite ||` block. Change **mySprite** to otherSprite and hit the **+** sign and select **disintegrate** as the effect. Next add the `|| info: change life by ||` block and change the number to **-1**.
-- :down arrow: **Fall Off Screen Logic**: within the `|| loops: forever ||` block add an `|| logic: if <true> then ||` block. Inside you want to add the `|| logic: 0 < 0 ||` block and change it to **>**. Add the `|| sprites: mySprite x ||` block and change the **x** to **y** for the left circle and add the number 130 for the right circle. Inside this if then want to take away a life and reset the bird to it's starting position. We need to add a `|| info: change life by ||` block and set the number to **-1**. Then we need to add a `|| spirites: set mySprite position to ||` block. We should set **bird** as the sprite and give it the values of **25 & 50**.
+- :down arrow: **Fall Off Screen Logic**: within the `|| loops: forever ||` block add an `|| logic: if <true> then ||` block. Inside you want to add the `|| logic: 0 < 0 ||` block and change it to **>**. Add the `|| sprites: mySprite x ||` block and change the **x** to **y** for the left circle and add the number 130 for the right circle. Inside this if then want to take away a life and reset the bird to it's starting position. We need to add a `|| info: change life by ||` block and set the number to **-1**. Then we need to add a `|| sprites: set mySprite position to ||` block. We should set **bird** as the sprite and give it the values of **25 & 50**.
 
 ```blocks
 let bird: Sprite = null
